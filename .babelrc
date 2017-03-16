@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    ["module-alias", [
+      { "src": "./app/frontend/javascripts/Account", "expose": "Account" },
+      { "src": "./app/frontend/javascripts/Auth", "expose": "Auth" },
+      { "src": "./app/frontend/javascripts/Votes", "expose": "Votes" },
+      { "src": "./app/frontend/javascripts/Utils", "expose": "Utils" },
+      { "src": "./app/frontend/javascripts/User", "expose": "User" },
+      { "src": "./app/frontend/javascripts/Shared", "expose": "Shared" },
+      { "src": "./app/frontend/javascripts/Session", "expose": "Session" },
+      { "src": "./app/frontend/javascripts/Registration", "expose": "Registration" },
+      { "src": "./app/frontend/javascripts/Posts", "expose": "Posts" },
+      { "src": "./app/frontend/javascripts/Header", "expose": "Header" }
+    ]]
+  ]
+}
