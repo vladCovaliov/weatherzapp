@@ -32,7 +32,7 @@ var config = module.exports = {
 
         // Options to configure babel with
         query: {
-          plugins: ['transform-runtime'],
+          plugins: ['transform-runtime', 'transform-decorators-legacy'],
           presets: ['es2015', 'stage-2', 'react'],
         }
       },

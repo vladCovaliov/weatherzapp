@@ -1,8 +1,8 @@
 {
-  "plugins": [
-    ["module-alias", [
-        { "src": "./frontend/javascripts/Routes/", "expose": "Routes" },
-        { "src": "./frontend/javascripts/Application/", "expose": "Application" },
-    ]]
-  ]
+    "plugins": [
+	    ["module-alias", [
+	        { "src": "./frontend/javascripts/Routes/", "expose": "Routes" },
+	        { "src": "./frontend/javascripts/Application/", "expose": "Application" }
+	    ]]
+	]
 }
