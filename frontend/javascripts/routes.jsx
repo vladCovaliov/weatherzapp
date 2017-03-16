@@ -1,11 +1,10 @@
 import { Route, Router, Redirect, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
+import ApplicationIndexRoute from 'Routes/ApplicationIndexRoute';
 
 export default function renderRoutes() {
-  return (
-    <Provider>
-      <Router history={ browserHistory }>
-      </Router>
-    </Provider>
-  );
+    return (
+		<Router history={ browserHistory }>
+	    	<Route path="/" component={ ApplicationIndexRoute } />
+		</Router>
+	);
 }

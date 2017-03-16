@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    %title Weatherz App!
+    %title APP
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:content => "The best weatherz app in town!", :name => "description"}/
+    %meta{:content => "APP", :name => "description"}/
 
     = csrf_meta_tags
 
@@ -11,6 +11,6 @@
     #root
 
   - if Rails.env.development?
-    %script{src: "http://localhost:8080/assets/bundle.js"}
+    %script{src: "http://localhost:3080/assets/bundle.js"}
   - else
     = javascript_include_tag BUNDLE_FILE

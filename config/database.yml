@@ -1,14 +1,17 @@
 development:
   adapter: postgresql
   database: weatherzapp_development
+  # user: root
   host: localhost
 
 test:
   adapter: postgresql
   database: weatherzapp_test
+  # user: root
   host: localhost
 
 production:
   adapter: postgresql
   database: weatherzapp_production
+  # user: root
   host: localhost

@@ -7,7 +7,7 @@ var config = module.exports = {
   // the main entry point for our application's frontend JS
   entry: [
     // Set up an ES6-ish environment
-    'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+    'webpack-dev-server/client?http://0.0.0.0:3080', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     'babel-polyfill',
     './frontend/javascripts/client.jsx',
@@ -55,7 +55,7 @@ var config = module.exports = {
     // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
     filename: 'bundle.js',
     // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles
-    publicPath: "http://localhost:8080/assets/",
+    publicPath: "http://localhost:3080/assets/",
   },
   resolve: {
     // tell webpack which extensions to auto search when it resolves modules. With this,
