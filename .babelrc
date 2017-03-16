@@ -2,6 +2,7 @@
     "plugins": [
 	    ["module-alias", [
 	        { "src": "./frontend/javascripts/Routes/", "expose": "Routes" },
+	        { "src": "./frontend/javascripts/City/", "expose": "City" },
 	        { "src": "./frontend/javascripts/Application/", "expose": "Application" }
 	    ]]
 	]

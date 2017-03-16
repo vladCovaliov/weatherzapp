@@ -1,8 +1,12 @@
 import { observable, computed } from 'mobx';
-import { RouterStore } from 'mobx-react-router';
 
-class CityStore {
+export default class CityStore {
 	@observable values = [];
+
+    constructor(routingStore) {
+        this.routingStore = routingStore;
+        this.setup();
+    }
 
     setup() {
     	this.values = this.valuesFromCityParam();
@@ -10,14 +14,14 @@ class CityStore {
 
     addCity(cityName) {
     	this.values.push(cityName);
-        routingStore.push({
-		  pathname: routingStore.location.pathname,
+        this.routingStore.push({
+		  pathname: this.routingStore.location.pathname,
 		  query: { city: this.cityQueryParam }
 		})
     }
 
     valuesFromCityParam() {
-    	return routingStore.location.query.city.split(',');
+    	return this.routingStore.location.query.city.split(',');
     }
 
     @computed get hasValues() {
@@ -36,11 +40,3 @@ class CityStore {
     	return this.values.join(',');
     }
 }
-
-const routingStore = new RouterStore();
-const cityStore = new CityStore();
-
-export default {
-	cityStore,
-	routingStore
-};

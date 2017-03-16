@@ -1,6 +1,6 @@
 import { observer, inject } from 'mobx-react';
 
-@inject('routingStore', 'cityStore') @observer
+@inject('cityStore') @observer
 export default class ApplicationIndexContainer extends React.Component {
 	onSubmit = (event) => {
 		event.preventDefault();
@@ -8,13 +8,10 @@ export default class ApplicationIndexContainer extends React.Component {
 		this.refs.city.value = '';
 	}
 
-	componentWillMount() {
-		this.props.cityStore.setup()
-	}
-
     render() {
         return (
         	<div>
+        	    <span> { this.props.cityStore.decoratedCities } </span>
 	        	<form onSubmit={ this.onSubmit }>
 		        	<input
 		        	    ref="city"
