@@ -18,8 +18,9 @@ export default class CityStore {
     }
 
     valuesFromCityParam() {
-        if (!!this.routingStore.location.query.city){
-            return this.routingStore.location.query.city.split(',').map((cityName) => {
+        const cityParam = this.routingStore.location.query.city;
+        if (!!cityParam){
+            return cityParam.split(',').map((cityName) => {
                 return (new CityModel(cityName));
             });
         } else {
@@ -33,13 +34,13 @@ export default class CityStore {
 
     @computed get cityQueryParam() {
     	if (!!this.values) {
-    		return this.values.map((city) => { return city.toURL }).join(',');
+    		return this.values.map(city => city.toURL()).join(',');
         } else {
         	return '';
         }
     }
 
     @computed get decoratedCities() {
-    	return this.values.map((city) => { return city.toURL }).join(',');
+    	return this.values.map(city => city.toWeather()).join('\r\n\n');
     }
 }
