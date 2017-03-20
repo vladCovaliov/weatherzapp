@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable } from 'mobx';
 import WeatherModel from 'Models/WeatherModel';
 
 export default class CityModel {
@@ -6,17 +6,8 @@ export default class CityModel {
 
 	constructor(cityName) {
 		this.name = cityName;
-		this.weather = new WeatherModel();
-		this.getWeather();
-	}
-
-	getWeather() {
-        setTimeout(() => {
-        	console.log("Done")
-        	this.weather.update({
-        		temperature: Math.random() * 50
-        	})
-        }, Math.random() * 2000)
+		this.weather = new WeatherModel(this);
+		this.weather.fetch();
 	}
 
 	toURL() {
