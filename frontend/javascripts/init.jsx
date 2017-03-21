@@ -9,8 +9,8 @@ const cityStore = new CityStore(routingStore);
 
 export default {
 	stores: {
-        cityStore,
-	    routingStore
-    },
-    history
+    cityStore,
+    routingStore
+  },
+  history
 };

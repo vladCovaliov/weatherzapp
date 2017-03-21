@@ -5,11 +5,11 @@ import ApplicationIndexRoute from 'Routes/ApplicationIndexRoute';
 import init from './init';
 
 export default function renderRoutes() {
-   return (
-    	<Provider { ...init.stores }>
-			<Router history={ init.history }>
-		    	<Route path="/" component={ ApplicationIndexRoute } />
-			</Router>
-		</Provider>
-	);
+  return (
+    <Provider { ...init.stores }>
+      <Router history={ init.history }>
+        <Route path="/" component={ ApplicationIndexRoute } />
+      </Router>
+    </Provider>
+  );
 }

@@ -2,26 +2,27 @@ import { observable } from 'mobx';
 import axios from 'axios';
 
 export default class WeatherModel {
-	@observable temperature;
-	@observable isFetched = false;
+  @observable isFetched = false;
 
-    constructor(city) {
-    	this.city = city;
-    }
+  constructor(city) {
+    this.city = city;
+  }
 
-	update(object) {
-		this.temperature = object.temperature;
-		this.isFetched = true;
-	}
+  fetch() {
+    axios.get('/weather', {
+      params: {
+        city: this.city.name
+      }
+    }).then((response) => {
+      const { data } = response;
 
-	fetch() {
-		axios.get('/weather', {
-			city: this.city.name
-		}).then(function (response) {
-		    console.log(response);
-		})
-		.catch(function (error) {
-		    console.log(error);
-		});
-	}
+      this.main = data.main;
+      this.now = data.weather[0];
+      this.wind = data.wind;
+      this.isFetched = true;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 }

@@ -39,8 +39,4 @@ export default class CityStore {
         	return '';
         }
     }
-
-    @computed get decoratedCities() {
-    	return this.values.map(city => city.toWeather()).join('\r\n\n');
-    }
 }
