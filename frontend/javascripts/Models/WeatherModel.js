@@ -16,12 +16,12 @@ export default class WeatherModel {
     }).then((response) => {
       const { data } = response;
       console.log(data);
-      debugger
+
       if (data.cod === 200) {
         this.main = data.main;
         this.now = data.weather[0];
         this.wind = data.wind;
-      } else if (data.cod === '404') {
+      } else {
         this.error = data.message;
       }
       this.isFetched = true;

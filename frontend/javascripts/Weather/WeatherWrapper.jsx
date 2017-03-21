@@ -4,13 +4,16 @@ import WeatherCityBox from './components/WeatherCityBox';
 @observer
 export default class WeatherWrapper extends React.Component {
   render() {
+    const { city, removeCity } = this.props;
+
     return (
       <div className="weather-wrapper">
         {
-          this.props.city.map((city, index) =>
+          city.map((city, index) =>
             <WeatherCityBox
               key={ index }
               weather={ city.weather }
+              removeCity={ removeCity.bind(this, city.name) }
             />
           )
         }
