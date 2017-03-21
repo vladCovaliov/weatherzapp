@@ -4,10 +4,11 @@ import WeatherBox from './WeatherBox';
 @observer
 export default class WeatherCityBox extends React.Component {
   getContent() {
-    const { isFetched, now, city, main, wind } = this.props.weather;
+    const { error, isFetched, now, city, main, wind } = this.props.weather;
+    let content;
 
-    if (isFetched) {
-      return (
+    if (isFetched && !error) {
+      content = (
         <WeatherBox
           now={ now }
           main={ main }
@@ -16,11 +17,18 @@ export default class WeatherCityBox extends React.Component {
         />
       );
     } else if (!isFetched) {
-      return (
+      content = (
         <span> Loading weather for { city.name } </span>
       )
+    } else if (error) {
+      content = (
+        <span> { error } </span>
+      )
     }
+
+    return content;
   }
+
   render() {
     return (
       <div className="weather-city-box">
