@@ -44,7 +44,7 @@ var config = module.exports = {
   },
   output: {
     // this is our app/assets/javascripts directory, which is part of the Sprockets pipeline
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    path: path.resolve(__dirname, 'public', 'assets'),
     // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
     filename: 'bundle.production.js',
     // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles

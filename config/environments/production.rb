@@ -83,6 +83,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  OWM_API_KEY = '4d014a365380bfd320133871013dbe6a';
+  BUNDLE_FILE = '/assets/bundle.production'
 end

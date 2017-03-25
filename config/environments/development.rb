@@ -54,6 +54,4 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-  OWM_API_KEY = '4d014a365380bfd320133871013dbe6a';
 end
