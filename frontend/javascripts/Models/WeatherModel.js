@@ -27,7 +27,8 @@ export default class WeatherModel {
       this.isFetched = true;
     })
     .catch((error) => {
-      console.log(error);
+      this.error = error;
+      this.isFetched = true;
     });
   }
 }

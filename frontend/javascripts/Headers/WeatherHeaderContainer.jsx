@@ -59,6 +59,22 @@ export default class WeatherHeaderContainer extends React.Component {
     this.refs.city.blur();
   }
 
+  citiesMissing() {
+    const { values } = this.props.cityStore;
+    return (values.length === 0);
+  }
+
+  getPlaceholder() {
+    const { hiddenCities } = this.state;
+    let placeholder = '';
+
+    if (hiddenCities ||
+      !hiddenCities && this.citiesMissing()) {
+      placeholder = "Enter cities separated by comma. e.g.: Cluj Napoca, Bucharest";
+    }
+    return placeholder;
+  }
+
 	render() {
     // We  can use classNames npm package instead
     const classNames = ["cities-inputs"];
@@ -73,6 +89,7 @@ export default class WeatherHeaderContainer extends React.Component {
   		      ref="city"
   		      type="text"
             onFocus={ this.hideCities } onBlur={ this.showCities }
+            placeholder={ this.getPlaceholder() }
   		    >
   		    </input>
           <div

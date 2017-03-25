@@ -9,7 +9,6 @@ export default class WeatherCityBox extends React.Component {
       wind: { speed: wind }
     } = this.props.weather;
 
-    console.log(this.props.weather);
     return [
       <div
         className="temp"
