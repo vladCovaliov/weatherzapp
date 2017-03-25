@@ -6,6 +6,7 @@ export default class WeatherModel {
 
   constructor(city) {
     this.city = city;
+    this.date = new Date();
   }
 
   fetch() {
@@ -15,7 +16,6 @@ export default class WeatherModel {
       }
     }).then((response) => {
       const { data } = response;
-      console.log(data);
 
       if (data.cod === 200) {
         this.main = data.main;

@@ -1,0 +1,10 @@
+.weather-wrapper {
+  max-width: 1060px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+
+  @media (min-width: 450px) {
+    margin-top: 60px;
+  }
+}

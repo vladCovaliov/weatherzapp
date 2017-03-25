@@ -14,7 +14,7 @@ export default class WeatherHeaderContainer extends React.Component {
     this.refs.city.value.split(', ').forEach(
       city => this.props.cityStore.addCity(city));
     this.refs.city.value = '';
-    this.toggleHiddenCities();
+    this.showCities();
   }
 
 	removeCity = (cityName, event) => {
@@ -56,6 +56,7 @@ export default class WeatherHeaderContainer extends React.Component {
 
   showCities = () => {
     this.setState({ hiddenCities: false });
+    this.refs.city.blur();
   }
 
 	render() {
