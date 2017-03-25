@@ -41,6 +41,7 @@ $weather-header-form-input-margin: ($weather-header-height - $weather-header-inp
 
     .cities-inputs {
       position: absolute;
+      top: calc(#{$weather-header-form-input-margin} + 5px);
       left: calc(#{$weather-header-form-input-margin} + 5px);
       right: calc(#{$weather-header-form-input-margin} + 5px);
       height: calc(#{$weather-header-input-height} - 10px);
