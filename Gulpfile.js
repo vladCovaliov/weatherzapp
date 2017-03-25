@@ -6,9 +6,9 @@ gulp.task('deploy', shell.task([
   'git add .',
   'git commit -m "Release Bundle - bundle.js"',
   'sleep 2',
-  'git push staging frontend:master',
-  'heroku run rake db:migrate --remote staging',
-  'heroku restart --remote staging',
+  'git push staging develop:master',
+  'heroku run rake db:migrate',
+  'heroku restart',
   'sleep 2',
-  'curl take-or-toss-staging.herokuapp.com'
+  'curl weatherzapp.herokuapp.com'
 ]))
