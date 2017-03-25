@@ -1,1 +1,10 @@
 @import 'fonts/roboto';
+
+@import 'shared/variables';
+@import 'shared/colors';
+@import 'shared/app';
+@import 'shared/silent';
+
+@import 'application/index';
+@import 'headers/weather';
+@import 'weather/container';

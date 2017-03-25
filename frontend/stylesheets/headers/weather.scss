@@ -1,0 +1,69 @@
+$weather-header-form-input-margin: ($weather-header-height - $weather-header-input-height)/2;
+
+.w-header {
+  @extend %font-roboto;
+  @extend %flex-12;
+  font-size: 14px;
+  background-color: $dark-gray;
+  color: white;
+
+  height: $weather-header-height;
+  width: inherit;
+
+  position: absolute;
+  top: 0;
+
+  form {
+    @extend %flex-align-center;
+    position: relative;
+    flex: 10;
+    max-width: 720px;
+    margin: 0 auto;
+    outline: none;
+
+    input {
+      outline: none;
+      margin: 0 calc(#{$weather-header-form-input-margin});
+      background-color: $light-gray-2;
+      width: 100%;
+      height: $weather-header-input-height;
+      border-radius: 2px 2px 0 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      border: 1px solid $light-gray;
+      font-size: 14px;
+      color: white;
+      padding: 0px 5px 0px;
+    }
+
+    .cities-inputs {
+      position: absolute;
+      left: calc(#{$weather-header-form-input-margin} + 5px);
+      right: calc(#{$weather-header-form-input-margin} + 5px);
+      height: calc(#{$weather-header-input-height} - 10px);
+      overflow-x: scroll;
+      @extend %flex-align-left;
+
+      .city-input {
+        @extend %flex-align-left;
+        position: relative;
+        height: 100%;
+        vertical-align: middle;
+        margin: 0px 5px;
+        padding: 0px 20px 0px 10px;
+        background-color: $light-gray-3;
+
+        .city-remove {
+          font-size: 16px;
+          position: absolute;
+          right: 5px;
+          top: 8px;
+
+          img {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+}

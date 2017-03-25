@@ -1,0 +1,21 @@
+%font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+%flex-12 {
+  display: flex;
+  flex: 12;
+}
+
+%flex-align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+%flex-align-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
