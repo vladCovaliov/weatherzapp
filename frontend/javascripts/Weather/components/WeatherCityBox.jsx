@@ -29,21 +29,10 @@ export default class WeatherCityBox extends React.Component {
     return content;
   }
 
-  getRemove() {
-    const { removeCity } = this.props;
-
-    return (
-      <a href="#" onClick={ removeCity } >
-        Remove
-      </a>
-    );
-  }
-
   render() {
     return (
       <div className="weather-city-box">
         { this.getContent() }
-        { this.getRemove() }
       </div>
     );
   }

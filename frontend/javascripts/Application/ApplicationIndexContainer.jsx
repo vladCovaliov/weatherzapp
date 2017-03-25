@@ -1,40 +1,14 @@
-import { observer, inject } from 'mobx-react';
-import WeatherWrapper from 'Weather/WeatherWrapper';
+import { observer } from 'mobx-react';
+import WeatherContainer from 'Weather/WeatherContainer';
+import WeatherHeaderContainer from 'Headers/WeatherHeaderContainer';
 
-@inject('cityStore') @observer
+@observer
 export default class ApplicationIndexContainer extends React.Component {
-  onSubmit = (event) => {
-    event.preventDefault();
-    this.props.cityStore.addCity(this.refs.city.value);
-    this.refs.city.value = '';
-  }
-
-  removeCity = (cityName, event) => {
-    event.preventDefault();
-    this.props.cityStore.removeCity(cityName);
-  }
-
   render() {
-    const { values } = this.props.cityStore;
-
     return (
-      <div>
-        <form onSubmit={ this.onSubmit }>
-          <input
-              ref="city"
-              type="text"
-          >
-          </input>
-          <button
-              type="submit"
-          >
-              Search
-          </button>
-        </form>
-        <WeatherWrapper
-          city={ values }
-          removeCity={ this.removeCity }
-        />
+      <div id="w-application-index">
+        <WeatherHeaderContainer />
+        <WeatherContainer />
       </div>
     );
   }

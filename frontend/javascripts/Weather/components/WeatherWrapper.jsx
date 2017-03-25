@@ -1,10 +1,10 @@
 import { observer } from 'mobx-react';
-import WeatherCityBox from './components/WeatherCityBox';
+import WeatherCityBox from 'Weather/components/WeatherCityBox';
 
 @observer
 export default class WeatherWrapper extends React.Component {
   render() {
-    const { city, removeCity } = this.props;
+    const { city } = this.props;
 
     return (
       <div className="weather-wrapper">
@@ -13,7 +13,6 @@ export default class WeatherWrapper extends React.Component {
             <WeatherCityBox
               key={ index }
               weather={ city.weather }
-              removeCity={ removeCity.bind(this, city.name) }
             />
           )
         }
